@@ -1,0 +1,40 @@
+{
+    "name": "KAGE",
+    "author": "Lee0701",
+    "description": "An API wrapper for Kage-Engine",
+    "version": "0.0.1",
+    "type": "hooks",
+    "AutoloadClasses": {
+        "KageHooks": "includes/KageHooks.php"
+    },
+    "Hooks": {
+        "ParserFirstCallInit": "KageHooks::onParserFirstCallInit",
+        "BeforePageDisplay": "KageHooks::onBeforePageDisplay"
+    },
+    "ResourceModules": {
+        "ext.KAGE.svg": {
+            "styles": [
+                "ext.KAGE.svg.css"
+            ]
+        }
+    },
+    "ResourceFileModulePaths": {
+        "localBasePath": "resources",
+        "remoteExtPath": "KAGE"
+    },
+    "MessagesDirs": {
+        "Kage": [
+            "i18n"
+        ]
+    },
+	"config": {
+        "KageApiUrl": {
+            "value": "http://localhost:3000",
+            "description": "A url of the Kage API"
+        }
+	},
+	"ConfigRegistry": {
+		"kage": "GlobalVarConfig::newInstance"
+	},
+    "manifest_version": 2
+}
