@@ -25,4 +25,12 @@ class KageApi {
         return $result;
     }
 
+    public static function callWebhook($title) {
+        $config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'kage' );
+        $webhookUrl = $config->get('KageWebhookUrl');
+        $title = urlencode($title);
+        $url = "$webhookUrl?char=$title";
+        $result = file_get_contents($url);
+    }
+
 }

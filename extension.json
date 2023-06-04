@@ -9,7 +9,8 @@
     },
     "Hooks": {
         "ParserFirstCallInit": "KageHooks::onParserFirstCallInit",
-        "BeforePageDisplay": "KageHooks::onBeforePageDisplay"
+        "BeforePageDisplay": "KageHooks::onBeforePageDisplay",
+        "PageSaveComplete": "KageHooks::onPageSaveComplete"
     },
     "ResourceModules": {
         "ext.KAGE.svg": {
@@ -31,6 +32,10 @@
         "KageApiUrl": {
             "value": "http://localhost:3000",
             "description": "A url of the Kage API"
+        },
+        "KageWebhookUrl": {
+            "value": "http://localhost:3000/update",
+            "description": "A url to notify page updates to"
         }
 	},
 	"ConfigRegistry": {
