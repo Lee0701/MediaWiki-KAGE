@@ -1,10 +1,7 @@
 
-.kage-result {
+svg.kage {
     display: inline-block;
-}
-
-.kage-result > svg {
     height: 1em;
     width: auto;
-    transform: translateY(0.125rem);
+    transform: translateY(0.125em);
 }
