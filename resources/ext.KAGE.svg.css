@@ -3,5 +3,5 @@ svg.kage {
     display: inline-block;
     height: 1em;
     width: auto;
-    transform: translateY(0.125em);
+    transform: translateY(-0.125em);
 }
