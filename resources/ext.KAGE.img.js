@@ -3,12 +3,15 @@
     mw.loader.using(['mediawiki.util']).then(function() {
         const elements = document.getElementsByClassName('kage');
         for(var svg of elements) {
+            var parent = svg.parentNode;
+            if(!svg || !parent) continue;
             var img = new Image();
-            img.src = 'data:image/svg+xml,' + encodeURIComponent(svg.outerHTML);
+            var content = svg.outerHTML.split('\n').map((line) => line.trim()).join('');
+            img.src = 'data:image/svg+xml,' + encodeURIComponent(content);
             img.classList.add('kage');
+            parent.insertBefore(img, svg);
+            parent.removeChild(svg);
             img.addEventListener('load', function() {
-                svg.parentElement.insertBefore(img, svg);
-                svg.parentElement.removeChild(svg);
                 img.style.display = 'inline-block';
             });
         }
