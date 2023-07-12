@@ -23,6 +23,7 @@ class KageHooks {
 
     public static function onBeforePageDisplay( OutputPage $outputPage, Skin $skin ) {
         $outputPage->addModuleStyles('ext.KAGE.svg');
+        $outputPage->addModules('ext.KAGE.img');
     }
 
     public static function onPageSaveComplete( WikiPage $wikiPage, UserIdentity $user, string $summary, int $flags, RevisionRecord $revisionRecord, EditResult $editResult ) {

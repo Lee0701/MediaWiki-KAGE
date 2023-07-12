@@ -17,6 +17,14 @@
             "styles": [
                 "ext.KAGE.svg.css"
             ]
+        },
+        "ext.KAGE.img": {
+            "styles": [
+                "ext.KAGE.img.css"
+            ],
+            "scripts": [
+                "ext.KAGE.img.js"
+            ]
         }
     },
     "ResourceFileModulePaths": {
