@@ -5,3 +5,10 @@ img.kage, svg.kage {
     width: auto;
     transform: translateY(-0.125em);
 }
+
+img.compose, svg.compose {
+    display: inline-block;
+    height: 1.125em;
+    width: auto;
+    transform: translateY(-0.125em);
+}

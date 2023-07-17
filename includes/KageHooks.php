@@ -8,17 +8,24 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
 
 require_once('KageApi.php');
+require_once('ComposeApi.php');
 require_once('KageContent.php');
 
 class KageHooks {
 
     public static function onParserFirstCallInit( Parser $parser ) {
         $parser->setHook('kage', [self::class, 'kageTag']);
+        $parser->setHook('compose', [self::class, 'composeTag']);
     }
 
     public static function kageTag( $input, array $args, Parser $parser, PPFrame $frame ) {
         $output = KageApi::render($input);
-        return KageContent::format($input, $output);
+        return KageContent::format_kage($input, $output);
+    }
+
+    public static function composeTag( $input, array $args, Parser $parser, PPFrame $frame ) {
+        $output = ComposeApi::render($input);
+        return KageContent::format_compose($input, $output);
     }
 
     public static function onBeforePageDisplay( OutputPage $outputPage, Skin $skin ) {

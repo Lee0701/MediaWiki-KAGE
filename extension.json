@@ -40,10 +40,19 @@
         "KageOutputFormat": {
             "value": "png",
             "description": "The output format for generated character images"
+        },
+        "ComposeApiUrl": {
+            "value": "http://localhost:3000",
+            "description": "A url of the Compose(漢字組建) API"
+        },
+        "ComposeOutputFormat": {
+            "value": "png",
+            "description": "The output format for generated character images"
         }
 	},
 	"ConfigRegistry": {
-		"kage": "GlobalVarConfig::newInstance"
+		"kage": "GlobalVarConfig::newInstance",
+		"compose": "GlobalVarConfig::newInstance"
 	},
     "manifest_version": 2
 }
