@@ -1,7 +1,7 @@
 
-svg.kage {
+img.kage, svg.kage {
     display: inline-block;
-    height: 1em;
+    height: 1.125em;
     width: auto;
     transform: translateY(-0.125em);
 }

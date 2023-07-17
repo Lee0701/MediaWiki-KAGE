@@ -7,10 +7,12 @@ class KageApi {
     public static function render($text) {
         $config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'kage' );
         $apiUrl = $config->get('KageApiUrl');
+        $outputFormat = $config->get('KageOutputFormat');
 
         $postdata = json_encode(
             array(
-                'content' => $text
+                'content' => $text,
+                'format' => $outputFormat
             )
         );
         $opts = array('http' =>
