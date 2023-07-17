@@ -23,6 +23,9 @@
         "localBasePath": "resources",
         "remoteExtPath": "KAGE"
     },
+    "ExtensionMessagesFiles": {
+        "KageMagic": "Kage.i18n.php"
+    },
     "MessagesDirs": {
         "Kage": [
             "i18n"

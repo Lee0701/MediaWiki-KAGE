@@ -3,7 +3,7 @@
 use MediaWiki\MediaWikiServices;
 
 class ComposeApi {
-    
+
     public static function render($text) {
         $config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'compose' );
         $apiUrl = $config->get('ComposeApiUrl');

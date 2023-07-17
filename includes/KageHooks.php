@@ -16,6 +16,9 @@ class KageHooks {
     public static function onParserFirstCallInit( Parser $parser ) {
         $parser->setHook('kage', [self::class, 'kageTag']);
         $parser->setHook('compose', [self::class, 'composeTag']);
+
+        $parser->setFunctionHook('kage', [self::class, 'kageFunction']);
+        $parser->setFunctionHook('compose', [self::class, 'composeFunction']);
     }
 
     public static function kageTag( $input, array $args, Parser $parser, PPFrame $frame ) {
@@ -26,6 +29,18 @@ class KageHooks {
     public static function composeTag( $input, array $args, Parser $parser, PPFrame $frame ) {
         $output = ComposeApi::render($input);
         return KageContent::format_compose($input, $output);
+    }
+
+    public static function kageFunction( Parser $parser, $input = '' ) {
+        $output = KageApi::render($input);
+        $output = KageContent::format_kage($input, $output);
+        return [ $output, 'noparse' => true, 'isHTML' => true ];
+    }
+
+    public static function composeFunction( Parser $parser, $input = '' ) {
+        $output = ComposeApi::render($input);
+        $output = KageContent::format_compose($input, $output);
+        return [ $output, 'noparse' => true, 'isHTML' => true ];
     }
 
     public static function onBeforePageDisplay( OutputPage $outputPage, Skin $skin ) {
