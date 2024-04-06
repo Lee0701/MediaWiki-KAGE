@@ -1,4 +1,16 @@
 
+span.kage {
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    transform: translateY(0.1em);
+    width: 1.15em;
+    height: 1.15em;
+    overflow: hidden;
+    color: transparent;
+}
+
 img.kage, svg.kage {
     display: inline-block;
     height: 1.125em;

@@ -3,6 +3,10 @@
 class KageContent {
 
     public static function format_kage($input, $output) {
+        $header = 'data:image/svg+xml;utf8,';
+        $output = preg_replace('/\\n/', "", $output);
+        $output = preg_replace('/"/', "&quot;", $output);
+        $output = "<span class=\"kage\" style=\"background-image: url('$header$output');\">$input</span>";
         return $output;
     }
 
