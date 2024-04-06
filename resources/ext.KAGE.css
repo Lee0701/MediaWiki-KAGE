@@ -8,6 +8,7 @@ span.kage {
     width: 1.15em;
     height: 1.15em;
     overflow: hidden;
+    line-height: 0%;
     color: transparent;
 }
 

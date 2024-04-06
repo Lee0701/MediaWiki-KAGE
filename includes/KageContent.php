@@ -2,7 +2,8 @@
 
 class KageContent {
 
-    public static function format_kage($input, $output) {
+    public static function format_kage($input, $output, $ids) {
+        $input = $ids or $input;
         $header = 'data:image/svg+xml;utf8,';
         $output = preg_replace('/\\n/', "", $output);
         $output = preg_replace('/"/', "&quot;", $output);
