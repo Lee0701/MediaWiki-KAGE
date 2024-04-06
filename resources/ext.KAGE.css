@@ -5,8 +5,8 @@ span.kage {
     background-size: contain;
     display: inline-block;
     transform: translateY(0.1em);
-    width: 1.15em;
-    height: 1.15em;
+    width: 1em;
+    height: 1em;
     overflow: hidden;
     line-height: 0%;
     color: transparent;
