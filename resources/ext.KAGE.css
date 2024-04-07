@@ -1,12 +1,12 @@
 
 span.kage {
-    background-position-y: bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    background-color: black;
     display: inline-block;
-    transform: translateY(0.1em);
-    width: 1em;
-    height: 1em;
+    transform: translateY(0.15em);
+    width: 1.15em;
+    height: 1.15em;
     overflow: hidden;
     line-height: 0%;
     color: transparent;
